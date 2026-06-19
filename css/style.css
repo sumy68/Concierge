@@ -420,6 +420,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   }
   .nav-links.open { transform: translateY(0); }
   .nav-links li { width: 100%; text-align: center; padding: 12px 0; }
+  .nav-toggle { display: block; }
   .has-dropdown > a::after { content: "\25BE"; }
   .dropdown {
     position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none;
