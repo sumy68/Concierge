@@ -433,3 +433,57 @@ body.cursor-active .cursor-glow { opacity: 1; }
   .steps { gap: 34px; }
   section { padding: 66px 0; }
 }
+
+/* ---------- Tablet (zwei Spalten statt einer) ---------- */
+@media (min-width: 601px) and (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Smartphone ---------- */
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  section { padding: 52px 0; }
+  .section-head { margin-bottom: 34px; }
+
+  h1 { font-size: clamp(2.2rem, 9vw, 2.8rem); }
+  h2 { font-size: clamp(1.7rem, 6.4vw, 2.1rem); }
+  .lead { font-size: 1.08rem; }
+
+  /* Hero ruhiger & kompakter, Partikelnetz aus (Performance + Lesbarkeit) */
+  .hero .container { padding-top: 72px; padding-bottom: 72px; }
+  .hero-meta { gap: 22px 28px; margin-top: 36px; }
+  .hero-meta strong { font-size: 1.6rem; }
+  .hero-particles { display: none; }
+  .page-hero { padding: 58px 0 48px; }
+
+  .btn { padding: 13px 24px; }
+  .hero-actions { gap: 12px; }
+
+  .band { padding: 34px 24px; gap: 28px; }
+  .band .stat strong { font-size: 3rem; }
+  .cta { padding: 50px 24px; }
+  .quote-block { padding: 34px 26px; }
+  .quote-block p { font-size: 1.35rem; }
+  .founder { gap: 26px; }
+  .split { gap: 28px; }
+  .service-block { gap: 28px; padding: 44px 0; }
+  .segment { padding: 30px 24px; }
+  .form { padding: 26px 20px; }
+
+  /* Vergleichstabelle: skaliert mit, statt seitlich überzulaufen */
+  .compare { table-layout: fixed; }
+  .compare th, .compare td { padding: 12px 9px; font-size: 0.82rem; word-break: break-word; }
+  .compare thead th { font-size: 0.92rem; }
+
+  /* Footer-Unterzeile untereinander */
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+
+/* ---------- Sehr kleine Geräte ---------- */
+@media (max-width: 400px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .brand { font-size: 1.3rem; }
+  .brand-icon { width: 25px; height: 25px; }
+}
