@@ -4,17 +4,19 @@
    ========================================================= */
 
 :root {
-  /* Farben */
-  --ink:        #14181f;   /* Haupt-Dunkel */
-  --ink-soft:   #232a35;
-  --paper:      #f7f5f1;   /* Hintergrund hell */
-  --paper-2:    #ffffff;
-  --gold:       #c0a062;   /* Akzent / Premium */
+  /* Farben — Weiß · Beige · Gold, mit Weinrot als auffälligem Akzent */
+  --ink:        #2b1217;   /* tiefes Bordeaux-Schwarz (dunkle Flächen) */
+  --ink-soft:   #3c1a20;
+  --paper:      #f4ece0;   /* Beige (Grundfläche) */
+  --paper-2:    #ffffff;   /* Weiß (Karten/Bänder) */
+  --gold:       #c0a062;   /* Gold-Akzent / Premium */
   --gold-dark:  #a3853f;
-  --text:       #2b2f36;
-  --text-mute:  #5d6470;
-  --line:       #e4ded3;
-  --line-dark:  #2c333f;
+  --wine:       #a01e2f;   /* Weinrot — auffälliger Akzent */
+  --wine-dark:  #7d1622;
+  --text:       #2c2326;
+  --text-mute:  #6a5f5f;
+  --line:       #e8ddcd;
+  --line-dark:  #43292f;
 
   /* Typo */
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
@@ -61,8 +63,8 @@ p  { color: var(--text-mute); }
   padding: 15px 30px; border-radius: var(--radius); cursor: pointer;
   transition: all 0.22s ease; border: 1px solid transparent;
 }
-.btn-primary { background: var(--gold); color: var(--ink); }
-.btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
+.btn-primary { background: var(--wine); color: #fff; }
+.btn-primary:hover { background: var(--wine-dark); transform: translateY(-2px); }
 .btn-ghost { border-color: rgba(255,255,255,0.35); color: #fff; }
 .btn-ghost:hover { background: rgba(255,255,255,0.1); }
 .btn-dark { background: var(--ink); color: #fff; }
@@ -158,9 +160,9 @@ section { padding: 96px 0; }
 .compare { width: 100%; border-collapse: collapse; background: var(--paper-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .compare th, .compare td { padding: 18px 24px; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
 .compare thead th { background: var(--ink); color: #fff; font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
-.compare thead th:last-child { background: var(--gold-dark); }
+.compare thead th:last-child { background: var(--wine); }
 .compare td:first-child { color: var(--text-mute); }
-.compare td.smy { font-weight: 600; color: var(--ink); }
+.compare td.smy { font-weight: 600; color: var(--wine); }
 .compare tr:last-child td { border-bottom: none; }
 
 /* ---------- Ablauf / Steps ---------- */
