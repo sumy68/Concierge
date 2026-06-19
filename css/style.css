@@ -13,6 +13,8 @@
   --gold-dark:  #a3853f;
   --wine:       #a81f3a;   /* Bordeaux-Rot (etwas röter) — auffälliger Akzent */
   --wine-dark:  #831629;
+  --bordeaux:      #5a1226;  /* dunkle Flächen: echtes Wein-Bordeaux (Hero, Footer, CTA) */
+  --bordeaux-soft: #76182f;
   --text:       #2c2326;
   --text-mute:  #6a5f5f;
   --line:       #e8ddcd;
@@ -67,8 +69,8 @@ p  { color: var(--text-mute); }
 .btn-primary:hover { background: var(--wine-dark); transform: translateY(-2px); }
 .btn-ghost { border-color: rgba(255,255,255,0.35); color: #fff; }
 .btn-ghost:hover { background: rgba(255,255,255,0.1); }
-.btn-dark { background: var(--ink); color: #fff; }
-.btn-dark:hover { background: var(--ink-soft); transform: translateY(-2px); }
+.btn-dark { background: var(--bordeaux); color: #fff; }
+.btn-dark:hover { background: var(--bordeaux-soft); transform: translateY(-2px); }
 
 /* ---------- Header / Nav ---------- */
 .site-header {
@@ -89,13 +91,13 @@ p  { color: var(--text-mute); }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 100%);
+  background: linear-gradient(160deg, var(--bordeaux) 0%, var(--bordeaux-soft) 100%);
   color: #fff; position: relative; overflow: hidden;
 }
 .hero::after {
   content: ""; position: absolute; right: -120px; top: -120px;
   width: 520px; height: 520px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(192,160,98,0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(208,90,112,0.22), transparent 70%);
 }
 .hero .container { padding-top: 110px; padding-bottom: 110px; position: relative; z-index: 1; }
 .hero h1 { color: #fff; max-width: 16ch; }
@@ -147,7 +149,7 @@ section { padding: 96px 0; }
 
 /* ---------- Garantie / Highlight band ---------- */
 .band {
-  background: var(--ink); color: #fff; border-radius: 6px; padding: 64px 56px;
+  background: var(--bordeaux); color: #fff; border-radius: 6px; padding: 64px 56px;
   display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center;
 }
 .band h2 { color: #fff; }
@@ -159,7 +161,7 @@ section { padding: 96px 0; }
 /* ---------- Vergleich (gegen Konzern) ---------- */
 .compare { width: 100%; border-collapse: collapse; background: var(--paper-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .compare th, .compare td { padding: 18px 24px; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
-.compare thead th { background: var(--ink); color: #fff; font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
+.compare thead th { background: var(--bordeaux); color: #fff; font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
 .compare thead th:last-child { background: var(--wine); }
 .compare td:first-child { color: var(--text-mute); }
 .compare td.smy { font-weight: 600; color: var(--wine); }
@@ -177,14 +179,14 @@ section { padding: 96px 0; }
 
 /* ---------- CTA band ---------- */
 .cta {
-  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 100%);
+  background: linear-gradient(160deg, var(--bordeaux) 0%, var(--bordeaux-soft) 100%);
   color: #fff; text-align: center; border-radius: 6px; padding: 80px 40px;
 }
 .cta h2 { color: #fff; max-width: 22ch; margin: 0 auto 18px; }
 .cta p { color: rgba(255,255,255,0.78); max-width: 50ch; margin: 0 auto 34px; }
 
 /* ---------- Page hero (Unterseiten) ---------- */
-.page-hero { background: var(--ink); color: #fff; padding: 92px 0 78px; }
+.page-hero { background: var(--bordeaux); color: #fff; padding: 92px 0 78px; }
 .page-hero h1 { color: #fff; }
 .page-hero .lead { color: rgba(255,255,255,0.78); margin-top: 20px; }
 .page-hero .crumb { font-size: 0.85rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px; }
@@ -202,7 +204,7 @@ section { padding: 96px 0; }
 
 /* ---------- Über uns ---------- */
 .values { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
-.quote-block { background: var(--ink); color:#fff; border-radius: 6px; padding: 56px; text-align:center; }
+.quote-block { background: var(--bordeaux); color:#fff; border-radius: 6px; padding: 56px; text-align:center; }
 .quote-block p { font-family: var(--serif); font-size: 1.8rem; color: #fff; font-style: italic; line-height: 1.4; max-width: 44ch; margin: 0 auto 18px; }
 .quote-block cite { font-style: normal; color: var(--gold); font-size: 0.95rem; letter-spacing: 0.08em; }
 
@@ -227,7 +229,7 @@ section { padding: 96px 0; }
 .form-note { font-size: 0.8rem; color: var(--text-mute); margin-top: 14px; }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 70px 0 30px; }
+.site-footer { background: var(--bordeaux); color: rgba(255,255,255,0.7); padding: 70px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 40px; padding-bottom: 46px; border-bottom: 1px solid var(--line-dark); }
 .footer-grid .brand { color: #fff; margin-bottom: 14px; }
 .footer-grid .brand-icon, .footer-grid .brand-text span { color: var(--gold); }
@@ -263,7 +265,7 @@ section { padding: 96px 0; }
 /* ---------- Zwei-Spalten-Block (App, Teaser) ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .split .visual {
-  background: linear-gradient(160deg, var(--ink), var(--ink-soft)); border-radius: 8px;
+  background: linear-gradient(160deg, var(--bordeaux), var(--bordeaux-soft)); border-radius: 8px;
   min-height: 340px; display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 14px; color: var(--gold); font-family: var(--serif); font-size: 1.5rem; padding: 44px; text-align: center;
 }
@@ -272,7 +274,7 @@ section { padding: 96px 0; }
 /* ---------- Founder / Interview ---------- */
 .founder { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: center; }
 .founder .portrait {
-  background: linear-gradient(160deg, var(--ink), var(--ink-soft)); border-radius: 8px; min-height: 320px;
+  background: linear-gradient(160deg, var(--bordeaux), var(--bordeaux-soft)); border-radius: 8px; min-height: 320px;
   display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: var(--serif); font-size: 3rem;
 }
 .founder .portrait img, .founder-photo { width: 100%; height: 100%; min-height: 320px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow); }
