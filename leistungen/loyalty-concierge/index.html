@@ -2,13 +2,24 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Erkennt den Basis-Pfad automatisch: "/Concierge/" auf GitHub Pages,
+    // "/" bei eigener Domain / Netlify / lokalem Server. Muss vor dem CSS laufen.
+    (function () {
+      var seg = location.pathname.split("/").filter(Boolean);
+      var path = (location.hostname.endsWith("github.io") && seg.length) ? "/" + seg[0] + "/" : "/";
+      var base = document.createElement("base");
+      base.href = path;
+      document.head.appendChild(base);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loyalty Concierge – SMY Concierge</title>
   <meta name="description" content="Concierge-Leistungen als Mitarbeiter-Benefit: persönliche Erledigungen, Paketservice, Reservierungen und Besorgungen – für mehr Arbeitgeberattraktivität und Mitarbeiterbindung." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -104,7 +115,7 @@
             <li>Meetingräume &amp; Catering</li>
             <li>Koordination vor Ort</li>
           </ul>
-          <a href="/leistungen/office-management/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/office-management/" class="link">Mehr erfahren &rarr;</a>
         </div>
         <div class="segment">
           <span class="tag">Digital</span>
@@ -115,7 +126,7 @@
             <li>Status jederzeit im Blick</li>
             <li><span class="soon">in Vorbereitung</span></li>
           </ul>
-          <a href="/service-app/" class="link">Mehr erfahren &rarr;</a>
+          <a href="service-app/" class="link">Mehr erfahren &rarr;</a>
         </div>
       </div>
     </div>
@@ -127,13 +138,13 @@
         <p class="eyebrow" style="color:var(--gold);">Talente halten, Team entlasten</p>
         <h2>Machen Sie Concierge zu Ihrem Benefit.</h2>
         <p>Erzählen Sie uns von Ihrem Team und Ihren Zielen – wir stellen einen Loyalty Concierge zusammen, der zu Ihrem Unternehmen passt.</p>
-        <a href="/kontakt/" class="btn btn-primary">Benefit-Konzept anfragen &rarr;</a>
+        <a href="kontakt/" class="btn btn-primary">Benefit-Konzept anfragen &rarr;</a>
       </div>
     </div>
   </section>
 
   <div id="site-footer"></div>
 
-  <script src="/js/main.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -12,9 +12,11 @@
 const reducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// Relativ, damit es auch unter einem Unterpfad (z. B. GitHub Pages /Concierge/)
+// funktioniert – aufgelöst gegen das per <base> gesetzte Wurzelverzeichnis.
 const PARTIALS = Object.freeze({
-  'site-header': '/partials/header.html',
-  'site-footer': '/partials/footer.html',
+  'site-header': 'partials/header.html',
+  'site-footer': 'partials/footer.html',
 });
 
 const FORM_DEMO_MESSAGE =
@@ -38,18 +40,19 @@ async function injectPartial(mountId, url) {
 }
 
 // Markiert den zur aktuellen Seite passenden Menüpunkt mit der Klasse "active".
+// Vergleicht aufgelöste absolute Pfade (link.pathname), damit es unabhängig vom
+// Basis-Pfad funktioniert – an der Domain-Wurzel wie unter /Concierge/.
 function setActiveNav() {
-  const path = window.location.pathname;
+  const root = new URL('./', document.baseURI).pathname; // "/" oder "/Concierge/"
+  const here = window.location.pathname;
   const links = document.querySelectorAll('.nav-links a');
 
   links.forEach((link) => {
     if (link.classList.contains('nav-cta')) return;
 
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    const isHome = href === '/' && (path === '/' || path === '/index.html');
-    const isSection = href !== '/' && path.startsWith(href);
+    const target = link.pathname; // vom Browser aufgelöster Pfad
+    const isHome = target === root && (here === root || here === root + 'index.html');
+    const isSection = target !== root && here.startsWith(target);
 
     if (isHome || isSection) {
       link.classList.add('active');

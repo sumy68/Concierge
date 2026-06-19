@@ -2,13 +2,24 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Erkennt den Basis-Pfad automatisch: "/Concierge/" auf GitHub Pages,
+    // "/" bei eigener Domain / Netlify / lokalem Server. Muss vor dem CSS laufen.
+    (function () {
+      var seg = location.pathname.split("/").filter(Boolean);
+      var path = (location.hostname.endsWith("github.io") && seg.length) ? "/" + seg[0] + "/" : "/";
+      var base = document.createElement("base");
+      base.href = path;
+      document.head.appendChild(base);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SMY Concierge – Empfang & Concierge-Service, persönlich gedacht</title>
   <meta name="description" content="Professioneller Empfangs- und Concierge-Dienst für Unternehmen und Immobilien – garantiert besetzt, persönlich betreut, ohne eigenes Personal. Persönlicher, flexibler, smarter als der Konzern." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -22,8 +33,8 @@
       <h1>Ihr Empfang. Immer besetzt. <em>Ohne eigenes Personal.</em></h1>
       <p class="lead">Wir übernehmen den professionellen Empfangs- und Concierge-Dienst für Unternehmen und Immobilien – mit garantierter Besetzung, persönlich betreut, zum planbaren Festpreis. Aus einem riskanten Personalproblem wird eine ausfallsichere Dienstleistung.</p>
       <div class="hero-actions">
-        <a href="/kontakt/" class="btn btn-primary">Unverbindliches Angebot &rarr;</a>
-        <a href="/leistungen/" class="btn btn-ghost">Leistungen ansehen</a>
+        <a href="kontakt/" class="btn btn-primary">Unverbindliches Angebot &rarr;</a>
+        <a href="leistungen/" class="btn btn-ghost">Leistungen ansehen</a>
       </div>
       <div class="hero-meta">
         <div><strong>100 %</strong><span>Garantierte Besetzung</span></div>
@@ -38,7 +49,7 @@
     <div class="container">
       <div class="founder">
         <div class="portrait">
-          <img src="/img/gruenderin.jpg" alt="Sümeyye Abur, Gründerin von SMY Concierge" />
+          <img src="img/gruenderin.jpg" alt="Sümeyye Abur, Gründerin von SMY Concierge" />
         </div>
         <div>
           <p class="eyebrow">Warum es SMY Concierge gibt</p>
@@ -62,37 +73,37 @@
           <span class="tag">Für Unternehmen</span>
           <h3>Reception Services</h3>
           <p>Professioneller Firmenempfang – ohne eigene Empfangskraft einstellen, vertreten oder verwalten zu müssen.</p>
-          <a href="/leistungen/reception-services/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/reception-services/" class="link">Mehr erfahren &rarr;</a>
         </div>
         <div class="segment">
           <span class="tag">Für Unternehmen</span>
           <h3>Office Management</h3>
           <p>Bestellungen, Meetingräume, Post und Organisation – wir halten Ihrem Team den Rücken frei.</p>
-          <a href="/leistungen/office-management/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/office-management/" class="link">Mehr erfahren &rarr;</a>
         </div>
         <div class="segment">
           <span class="tag">Für Immobilien</span>
           <h3>Residential Concierge</h3>
           <p>Eine feste Ansprechperson vor Ort, die Bewohnern den Alltag erleichtert und das Objekt aufwertet.</p>
-          <a href="/leistungen/residential-concierge/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/residential-concierge/" class="link">Mehr erfahren &rarr;</a>
         </div>
         <div class="segment">
           <span class="tag">Für Quartiere</span>
           <h3>Quartiers-Concierge</h3>
           <p>Eine gemeinsame Anlaufstelle für gemischte Wohn- und Gewerbequartiere – ein Service für alle.</p>
-          <a href="/leistungen/quartiers-concierge/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/quartiers-concierge/" class="link">Mehr erfahren &rarr;</a>
         </div>
         <div class="segment">
           <span class="tag">Für Mitarbeitende</span>
           <h3>Loyalty Concierge</h3>
           <p>Concierge-Leistungen als Benefit, der Mitarbeitende bindet und den Arbeitsalltag entlastet.</p>
-          <a href="/leistungen/loyalty-concierge/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/loyalty-concierge/" class="link">Mehr erfahren &rarr;</a>
         </div>
         <div class="segment">
           <span class="tag">Ergänzend</span>
           <h3>Security Services</h3>
           <p>Zugangskontrolle und Sicherheit im Eingangsbereich – nahtlos mit dem Empfang verzahnt.</p>
-          <a href="/leistungen/security-services/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/security-services/" class="link">Mehr erfahren &rarr;</a>
         </div>
       </div>
     </div>
@@ -123,7 +134,7 @@
           <p class="eyebrow">After Sales</p>
           <h2>Betreuung zwischen Übergabe und Einzug</h2>
           <p class="lead">Gerade frisch übergebene Objekte brauchen jemanden vor Ort: Wir kümmern uns in der sensiblen Phase zwischen Schlüsselübergabe und Erstbezug um Ansprechbarkeit, Übergaben und einen sauberen Start ins neue Zuhause oder Büro.</p>
-          <p style="margin-top:18px;"><a href="/after-sales/" class="btn btn-dark">Mehr zu After Sales &rarr;</a></p>
+          <p style="margin-top:18px;"><a href="after-sales/" class="btn btn-dark">Mehr zu After Sales &rarr;</a></p>
         </div>
         <div class="visual"><small>After Sales</small>Sauberer Start<br>ab Tag eins</div>
       </div>
@@ -139,7 +150,7 @@
           <p class="eyebrow">Service App</p>
           <h2>Concierge auf dem Smartphone <span class="soon">in Vorbereitung</span></h2>
           <p class="lead">Anfragen stellen, Pakete verwalten, Reservierungen anstoßen – jederzeit. Wir ergänzen die persönliche Betreuung um eine smarte digitale Ebene, damit Bewohner und Mitarbeitende rund um die Uhr Zugriff auf ihren Concierge haben.</p>
-          <p style="margin-top:18px;"><a href="/service-app/" class="btn btn-dark">Zur Service App &rarr;</a></p>
+          <p style="margin-top:18px;"><a href="service-app/" class="btn btn-dark">Zur Service App &rarr;</a></p>
         </div>
       </div>
     </div>
@@ -180,7 +191,7 @@
           <p class="eyebrow">Beratung</p>
           <h2>Erst das Konzept, dann der Service</h2>
           <p class="lead">Sie wissen noch nicht, welcher Empfangs- oder Concierge-Aufbau zu Ihrem Objekt passt? Wir analysieren Zeiten, Wege und Anforderungen und entwickeln gemeinsam ein Konzept – unabhängig und ohne Verkaufsdruck.</p>
-          <p style="margin-top:18px;"><a href="/consulting/" class="btn btn-dark">Zur Beratung &rarr;</a></p>
+          <p style="margin-top:18px;"><a href="consulting/" class="btn btn-dark">Zur Beratung &rarr;</a></p>
         </div>
         <div class="visual"><small>Consulting</small>Konzept vor<br>Umsetzung</div>
       </div>
@@ -250,7 +261,7 @@
           <p class="eyebrow" style="color:var(--gold);">Karriere</p>
           <h2>Werden Sie das Gesicht von SMY Concierge.</h2>
           <p>Wir suchen Menschen, die gerne den Unterschied machen – am Empfang, im Office Management oder als Concierge vor Ort. Persönlich, freundlich, zuverlässig.</p>
-          <p style="margin-top:22px;"><a href="/karriere/" class="btn btn-primary">Offene Stellen ansehen &rarr;</a></p>
+          <p style="margin-top:22px;"><a href="karriere/" class="btn btn-primary">Offene Stellen ansehen &rarr;</a></p>
         </div>
         <div class="stat">
           <strong>Wir</strong>
@@ -295,7 +306,7 @@
         <p class="eyebrow" style="color:var(--gold);">Machen Sie den ersten Schritt</p>
         <h2>Bereit für einen Empfang, der immer da ist?</h2>
         <p>Erzählen Sie uns von Ihrem Objekt oder Büro. Wir melden uns innerhalb von 24 Stunden mit einer ersten Einschätzung.</p>
-        <a href="/kontakt/" class="btn btn-primary">Jetzt Angebot anfragen &rarr;</a>
+        <a href="kontakt/" class="btn btn-primary">Jetzt Angebot anfragen &rarr;</a>
       </div>
     </div>
   </section>
@@ -303,6 +314,6 @@
   <!-- Footer -->
   <div id="site-footer"></div>
 
-  <script src="/js/main.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

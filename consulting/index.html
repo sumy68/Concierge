@@ -2,13 +2,24 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Erkennt den Basis-Pfad automatisch: "/Concierge/" auf GitHub Pages,
+    // "/" bei eigener Domain / Netlify / lokalem Server. Muss vor dem CSS laufen.
+    (function () {
+      var seg = location.pathname.split("/").filter(Boolean);
+      var path = (location.hostname.endsWith("github.io") && seg.length) ? "/" + seg[0] + "/" : "/";
+      var base = document.createElement("base");
+      base.href = path;
+      document.head.appendChild(base);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beratung – SMY Concierge</title>
   <meta name="description" content="Unabhängige Beratung zum passenden Empfangs- und Concierge-Konzept – vor der Umsetzung. Wir analysieren Zeiten, Wege, Anforderungen und Wirtschaftlichkeit und empfehlen ergebnisoffen, auch kleiner als gedacht. Ohne Verkaufsdruck." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -103,13 +114,13 @@
         <p class="eyebrow" style="color:var(--gold);">Erst beraten, dann entscheiden</p>
         <h2>Finden Sie heraus, was wirklich zu Ihnen passt.</h2>
         <p>Erzählen Sie uns kurz von Ihrem Objekt und Ihren Fragen – wir nehmen uns Zeit für eine ehrliche, unabhängige Einschätzung.</p>
-        <a href="/kontakt/" class="btn btn-primary">Beratungsgespräch anfragen &rarr;</a>
+        <a href="kontakt/" class="btn btn-primary">Beratungsgespräch anfragen &rarr;</a>
       </div>
     </div>
   </section>
 
   <div id="site-footer"></div>
 
-  <script src="/js/main.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

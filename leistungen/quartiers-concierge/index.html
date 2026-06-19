@@ -2,13 +2,24 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Erkennt den Basis-Pfad automatisch: "/Concierge/" auf GitHub Pages,
+    // "/" bei eigener Domain / Netlify / lokalem Server. Muss vor dem CSS laufen.
+    (function () {
+      var seg = location.pathname.split("/").filter(Boolean);
+      var path = (location.hostname.endsWith("github.io") && seg.length) ? "/" + seg[0] + "/" : "/";
+      var base = document.createElement("base");
+      base.href = path;
+      document.head.appendChild(base);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quartiers-Concierge – SMY Concierge</title>
   <meta name="description" content="Eine gemeinsame Concierge-Anlaufstelle für gemischt genutzte Quartiere – Service für Bewohner, Gewerbe und Besucher, geteilte Kosten, hoher Nutzen für alle." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -104,7 +115,7 @@
             <li>Paket- &amp; Schlüsselverwaltung</li>
             <li>Service-Anfragen aller Art</li>
           </ul>
-          <a href="/leistungen/residential-concierge/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/residential-concierge/" class="link">Mehr erfahren &rarr;</a>
         </div>
         <div class="segment">
           <span class="tag">Für Unternehmen</span>
@@ -115,7 +126,7 @@
             <li>Telefonzentrale &amp; Weiterleitung</li>
             <li>Post- und Paketannahme</li>
           </ul>
-          <a href="/leistungen/reception-services/" class="link">Mehr erfahren &rarr;</a>
+          <a href="leistungen/reception-services/" class="link">Mehr erfahren &rarr;</a>
         </div>
       </div>
     </div>
@@ -127,13 +138,13 @@
         <p class="eyebrow" style="color:var(--gold);">Quartier im Blick?</p>
         <h2>Lassen Sie uns über Ihr Areal sprechen.</h2>
         <p>Erzählen Sie uns von Ihrem Quartier und den beteiligten Parteien – wir entwickeln ein passendes Concierge-Konzept mit fairer Kostenteilung.</p>
-        <a href="/kontakt/" class="btn btn-primary">Quartiers-Konzept anfragen &rarr;</a>
+        <a href="kontakt/" class="btn btn-primary">Quartiers-Konzept anfragen &rarr;</a>
       </div>
     </div>
   </section>
 
   <div id="site-footer"></div>
 
-  <script src="/js/main.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
