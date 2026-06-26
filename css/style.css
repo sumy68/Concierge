@@ -272,6 +272,7 @@ section { padding: 96px 0; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .split .visual {
   background: linear-gradient(160deg, var(--bordeaux), var(--bordeaux-soft)); border-radius: 8px;
+  background-size: cover; background-position: center; overflow: hidden;
   min-height: 340px; display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 14px; color: var(--gold); font-family: var(--serif); font-size: 1.5rem; padding: 44px; text-align: center;
 }
