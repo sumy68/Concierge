@@ -67,6 +67,12 @@ p  { color: var(--text-mute); }
 }
 .btn-primary { background: var(--wine); color: #fff; }
 .btn-primary:hover { background: var(--wine-dark); transform: translateY(-2px); }
+/* Auf dunklen Bordeaux-Flächen Gold-Button, damit er klar sichtbar bleibt */
+.hero .btn-primary, .page-hero .btn-primary, .cta .btn-primary, .band .btn-primary {
+  background: var(--gold); color: var(--ink);
+}
+.hero .btn-primary:hover, .page-hero .btn-primary:hover,
+.cta .btn-primary:hover, .band .btn-primary:hover { background: var(--gold-dark); }
 .btn-ghost { border-color: rgba(255,255,255,0.35); color: #fff; }
 .btn-ghost:hover { background: rgba(255,255,255,0.1); }
 .btn-dark { background: var(--bordeaux); color: #fff; }
@@ -162,7 +168,7 @@ section { padding: 96px 0; }
 .compare { width: 100%; border-collapse: collapse; background: var(--paper-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .compare th, .compare td { padding: 18px 24px; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
 .compare thead th { background: var(--bordeaux); color: #fff; font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
-.compare thead th:last-child { background: var(--wine); }
+.compare thead th:last-child { background: var(--gold); color: var(--ink); }
 .compare td:first-child { color: var(--text-mute); }
 .compare td.smy { font-weight: 600; color: var(--wine); }
 .compare tr:last-child td { border-bottom: none; }
