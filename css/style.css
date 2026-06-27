@@ -99,7 +99,7 @@ p  { color: var(--text-mute); }
 .hero {
   background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-soft) 100%);
   color: #fff; position: relative; overflow: hidden;
-  display: flex; align-items: center; min-height: 80vh;
+  display: flex; align-items: flex-start; min-height: 80vh;
 }
 .hero .hero-particles { display: none; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; width: 100%; }
@@ -112,7 +112,7 @@ p  { color: var(--text-mute); }
   width: 520px; height: 520px; border-radius: 50%;
   background: radial-gradient(circle, rgba(208,90,112,0.22), transparent 70%);
 }
-.hero .container { padding-top: 56px; padding-bottom: 56px; position: relative; z-index: 1; }
+.hero .container { padding-top: 7vh; padding-bottom: 9vh; position: relative; z-index: 1; }
 .hero h1 { color: #fff; max-width: 22ch; text-wrap: balance; }
 .hero h1 em { font-style: italic; color: var(--gold); }
 .hero .lead { color: rgba(255,255,255,0.8); margin-top: 28px; max-width: 56ch; }
