@@ -105,10 +105,10 @@ p  { color: var(--text-mute); }
   width: 520px; height: 520px; border-radius: 50%;
   background: radial-gradient(circle, rgba(208,90,112,0.22), transparent 70%);
 }
-.hero .container { padding-top: 110px; padding-bottom: 110px; position: relative; z-index: 1; }
-.hero h1 { color: #fff; max-width: 16ch; }
+.hero .container { padding-top: 120px; padding-bottom: 120px; position: relative; z-index: 1; }
+.hero h1 { color: #fff; max-width: 22ch; text-wrap: balance; }
 .hero h1 em { font-style: italic; color: var(--gold); }
-.hero .lead { color: rgba(255,255,255,0.8); margin-top: 26px; }
+.hero .lead { color: rgba(255,255,255,0.8); margin-top: 28px; max-width: 56ch; }
 .hero-actions { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
 .hero-meta { margin-top: 54px; display: flex; gap: 40px; flex-wrap: wrap; }
 .hero-meta div { border-left: 2px solid var(--gold); padding-left: 16px; }
