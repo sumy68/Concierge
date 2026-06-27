@@ -97,15 +97,19 @@ p  { color: var(--text-mute); }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(160deg, var(--bordeaux) 0%, var(--bordeaux-soft) 100%);
+  background-image:
+    linear-gradient(105deg, rgba(43,18,23,0.95) 0%, rgba(74,16,32,0.84) 44%, rgba(90,18,38,0.50) 100%),
+    url('../img/hero.jpg');
+  background-size: cover; background-position: center;
   color: #fff; position: relative; overflow: hidden;
+  display: flex; align-items: center; min-height: 84vh;
 }
 .hero::after {
   content: ""; position: absolute; right: -120px; top: -120px;
   width: 520px; height: 520px; border-radius: 50%;
   background: radial-gradient(circle, rgba(208,90,112,0.22), transparent 70%);
 }
-.hero .container { padding-top: 120px; padding-bottom: 120px; position: relative; z-index: 1; }
+.hero .container { padding-top: 56px; padding-bottom: 56px; position: relative; z-index: 1; }
 .hero h1 { color: #fff; max-width: 22ch; text-wrap: balance; }
 .hero h1 em { font-style: italic; color: var(--gold); }
 .hero .lead { color: rgba(255,255,255,0.8); margin-top: 28px; max-width: 56ch; }
@@ -463,7 +467,9 @@ body.cursor-active .cursor-glow { opacity: 1; }
   .lead { font-size: 1.08rem; }
 
   /* Hero ruhiger & kompakter, Partikelnetz aus (Performance + Lesbarkeit) */
-  .hero .container { padding-top: 72px; padding-bottom: 72px; }
+  .hero { min-height: auto; }
+  .hero .container { padding-top: 78px; padding-bottom: 64px; }
+  .hero h1 { max-width: 100%; }
   .hero-meta { gap: 22px 28px; margin-top: 36px; }
   .hero-meta strong { font-size: 1.6rem; }
   .hero-particles { display: none; }
