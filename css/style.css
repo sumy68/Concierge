@@ -103,7 +103,7 @@ p  { color: var(--text-mute); }
 }
 .hero .hero-particles { display: none; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; width: 100%; }
-.hero-emblem { display: flex; justify-content: center; }
+.hero-emblem { display: flex; justify-content: center; align-self: start; margin-top: -2rem; }
 .hero-emblem svg { width: 100%; max-width: 380px; height: auto; }
 .emblem-spin { transform-origin: 100px 100px; animation: spinSlow 70s linear infinite; }
 @keyframes spinSlow { to { transform: rotate(360deg); } }
@@ -448,7 +448,7 @@ body.cursor-active .cursor-glow { opacity: 1; }
   .grid-2, .grid-3, .band, .steps, .service-block, .contact-grid, .values, .footer-grid, .form-row,
   .stats, .split, .founder, .hero-grid { grid-template-columns: 1fr; }
   .hero-grid { gap: 36px; }
-  .hero-emblem { order: -1; }
+  .hero-emblem { order: -1; align-self: center; margin-top: 0; }
   .hero-emblem svg { max-width: 240px; }
   .founder .portrait, .split .visual { min-height: 220px; }
   .band { padding: 44px 32px; }
