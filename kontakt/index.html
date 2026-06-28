@@ -42,7 +42,7 @@
           <h2 style="margin-bottom:24px;">Sprechen Sie mit uns</h2>
           <div class="info-item">
             <h4>E-Mail</h4>
-            <a href="mailto:info.smyagency@gmail.com">info.smyagency@gmail.com</a>
+            <a href="mailto:info@smy-concierge.de">info@smy-concierge.de</a>
           </div>
           <div class="info-item">
             <h4>Telefon</h4>
@@ -59,7 +59,7 @@
         </div>
 
         <!-- Formular -->
-        <form class="form" id="contactForm" action="#" method="post">
+        <form class="form" id="contactForm" action="https://formspree.io/f/xbdvyejp" method="POST">
           <h3 style="margin-bottom:8px;">Angebot anfragen</h3>
           <p style="font-size:0.95rem; margin-bottom:24px;">Hinterlassen Sie Ihre Daten – wir melden uns umgehend zurück.</p>
 
@@ -118,7 +118,8 @@
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Anfrage absenden &rarr;</button>
-          <p class="form-note">* Pflichtfeld. Hinweis: Dieses Formular ist noch nicht mit einem Versanddienst verbunden – siehe README, Abschnitt „Formular aktivieren".</p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
+          <p class="form-note">* Pflichtfeld. Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
         </form>
       </div>
     </div>

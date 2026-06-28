@@ -2,7 +2,7 @@
 //  - Header- und Footer-Partials laden und einsetzen
 //  - aktiven Menüpunkt anhand der URL markieren
 //  - mobiles Menü (Burger) schalten
-//  - Demo-Handling des Kontaktformulars
+//  - Versand des Kontaktformulars (AJAX an Formspree)
 //  - Animationen: Scroll-Reveal, Count-up der Kennzahlen, Header-Schatten
 //
 // Hinweis: Die Partials werden per fetch() geladen. Das funktioniert nur über
@@ -19,9 +19,14 @@ const PARTIALS = Object.freeze({
   'site-footer': 'partials/footer.html',
 });
 
-const FORM_DEMO_MESSAGE =
-  'Danke für Ihre Anfrage! (Demo – das Formular ist noch nicht mit einem ' +
-  'Versanddienst verbunden. Anleitung in der README.)';
+const FORM_MESSAGES = Object.freeze({
+  success:
+    'Vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und ' +
+    'melden uns innerhalb von 24 Stunden bei Ihnen.',
+  error:
+    'Leider konnte Ihre Anfrage nicht gesendet werden. Bitte versuchen Sie ' +
+    'es erneut oder schreiben Sie uns direkt an info@smy-concierge.de.',
+});
 
 // Lädt ein Partial und setzt es in das Element mit der übergebenen ID ein.
 async function injectPartial(mountId, url) {
@@ -83,14 +88,49 @@ function initDropdowns() {
   });
 }
 
-// Demo-Versand des Kontaktformulars (verhindert echtes Absenden).
+// Zeigt eine Status-Meldung unter dem Formular an (Erfolg oder Fehler).
+function showFormStatus(status, type, message) {
+  if (!status) return;
+  status.textContent = message;
+  status.classList.toggle('is-error', type === 'error');
+  status.classList.toggle('is-success', type === 'success');
+  status.hidden = false;
+}
+
+// Versendet das Kontaktformular per AJAX an Formspree und zeigt das Ergebnis an,
+// ohne die Seite neu zu laden. Fällt der fetch() aus, bleibt die native Anzeige
+// über die Fehlermeldung verständlich.
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  form.addEventListener('submit', (event) => {
+  const status = document.getElementById('formStatus');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    window.alert(FORM_DEMO_MESSAGE);
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        form.reset();
+        showFormStatus(status, 'success', FORM_MESSAGES.success);
+      } else {
+        showFormStatus(status, 'error', FORM_MESSAGES.error);
+      }
+    } catch (error) {
+      console.error('Kontaktformular konnte nicht gesendet werden:', error);
+      showFormStatus(status, 'error', FORM_MESSAGES.error);
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 }
 
@@ -253,8 +293,8 @@ function drawConciergeIcon(ctx, type, x, y, s) {
   ctx.restore();
 }
 
-// Interaktives Symbol-Netzwerk ("Verknüpfungen") im Hero – wie auf smyagency.de,
-// aber zum Thema passend: feine Gold-Punkte, durchsetzt mit Concierge-Symbolen
+// Interaktives Symbol-Netzwerk ("Verknüpfungen") im Hero –
+// zum Thema passend: feine Gold-Punkte, durchsetzt mit Concierge-Symbolen
 // (Schlüssel, Empfangsglocke, Paket …). Sie schweben, verbinden sich mit Linien
 // und reagieren auf die Maus. Das Canvas wird per JS in den Hero eingesetzt.
 function createHeroNetwork(hero) {
