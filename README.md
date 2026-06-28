@@ -61,7 +61,7 @@ SMY Concierge Website/
 3. **Formular aktivieren** (siehe unten).
 4. **Echte Referenzen/Cases** ergänzen, sobald der erste Pilot läuft (ersetzen die Platzhalter bei Insights, Testimonials, Partner-Logos).
 5. **Datenschutz prüfen:** Die Erklärung ist auf den aktuellen Stand der Seite zugeschnitten (Google Fonts, Kontaktformular, keine Tracker). **Sobald** du Analyse-/Marketing-Tools (z. B. Google Analytics, Meta Pixel, Hotjar) oder Cookies ergänzt, müssen die entsprechenden Abschnitte ergänzt werden. Im Zweifel rechtlich prüfen lassen.
-6. **E-Mail-Adresse vereinheitlichen:** Impressum/Datenschutz nutzen `info@smyagency.de` (wie auf smyagency.de), die Kontaktseite/Footer nutzen `info.smyagency@gmail.com`. Bei Bedarf auf eine Adresse festlegen.
+6. **E-Mail-Adresse vereinheitlichen:** Impressum/Datenschutz nutzen `info@smy-concierge.de` (wie auf smyagency.de), die Kontaktseite/Footer nutzen `info.smyagency@gmail.com`. Bei Bedarf auf eine Adresse festlegen.
 
 ## Formular aktivieren
 
